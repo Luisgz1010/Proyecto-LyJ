@@ -19,7 +19,7 @@ function lyj_admin_bar_menu( $wp_admin_bar ) {
 			'id'     => 'lyj-about',
 			'parent' => 'lyj-logo',
 			'title'  => 'Acerca de WordPress LyJ',
-			'href'   => home_url( '/' ),
+			'href'   => admin_url( 'admin.php?page=proyecto-lyj' ),
 		)
 	);
 
