@@ -7,7 +7,7 @@ function lyj_admin_bar_menu( $wp_admin_bar ) {
 		array(
 			'id'    => 'lyj-logo',
 			'title' => '<span class="lyj-admin-bar-logo" aria-hidden="true"></span><span class="screen-reader-text">Proyecto LyJ</span>',
-			'href'  => admin_url(),
+			'href'  => admin_url( 'admin.php?page=proyecto-lyj' ),
 			'meta'  => array(
 				'title' => 'Proyecto LyJ',
 			),
@@ -18,8 +18,8 @@ function lyj_admin_bar_menu( $wp_admin_bar ) {
 		array(
 			'id'     => 'lyj-about',
 			'parent' => 'lyj-logo',
-			'title'  => 'Acerca de WordPress LyJ',
-			'href'   => home_url( '/' ),
+			'title'  => 'Acerca de proyecto WordPress LyJ',
+			'href'   => admin_url( 'admin.php?page=proyecto-lyj' ),
 		)
 	);
 
@@ -27,7 +27,7 @@ function lyj_admin_bar_menu( $wp_admin_bar ) {
 		array(
 			'id'     => 'lyj-description',
 			'parent' => 'lyj-logo',
-			'title'  => 'Proyecto open source creado por Luis y Joed',
+			'title'  => 'Ir a LyJ Lab',
 			'href'   => home_url( '/' ),
 		)
 	);
@@ -54,3 +54,14 @@ function lyj_admin_bar_menu( $wp_admin_bar ) {
 	);
 }
 add_action( 'admin_bar_menu', 'lyj_admin_bar_menu', 11 );
+
+function lyj_admin_bar_site_name( $wp_admin_bar ) {
+	$wp_admin_bar->add_node(
+		array(
+			'id'    => 'site-name',
+			'title' => 'LyJ Lab',
+			'href'  => home_url( '/' ),
+		)
+	);
+}
+add_action( 'admin_bar_menu', 'lyj_admin_bar_site_name', 999 );
